@@ -280,21 +280,6 @@ Future development directions include:
 
 ---
 
-# Repository Structure
-
-```text
-.
-├── adaptive_pid_vs_pid.py
-├── kalman_estimation.py
-├── thermal_diffusion_simulation.py
-├── fault_tolerant_simulation.py
-├── controller_comparison.py
-├── figures/
-├── paper/
-└── README.md
-```
-
----
 
 # Requirements
 
