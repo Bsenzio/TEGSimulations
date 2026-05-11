@@ -335,17 +335,6 @@ This work was developed as part of research activities related to:
 
 under winter environmental conditions representative of Yamagata, Japan.
 
----
-
-# Citation
-
-If you use this repository in academic work, please cite:
-
-```text
-Bruno Senzio-Savino, Faramarz Alsharif, Jason Noble,
-"Independent Thermoelectric Node Regulation for Adaptive Rooftop Snow Mitigation Under Cold Climate Conditions",
-2026.
-```
 
 ---
 
@@ -355,16 +344,3 @@ MIT License
 
 ---
 
-# Authors
-
-Bruno Senzio-Savino  
-Graduate School of Science and Engineering  
-Yamagata University, Japan
-
-Faramarz Alsharif  
-Graduate School of Science and Engineering  
-Yamagata University, Japan
-
-Jason Noble  
-Capricorn Consulting GK  
-Okinawa, Japan
