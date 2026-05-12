@@ -37,11 +37,11 @@ end
 
 failure_map = ones(GRID_SIZE, GRID_SIZE);
 
-num_failures = round( ...
+num_failures = round( 
     GRID_SIZE * GRID_SIZE * failure_ratio);
 
-failed_indices = randperm( ...
-    GRID_SIZE * GRID_SIZE, ...
+failed_indices = randperm( 
+    GRID_SIZE * GRID_SIZE, 
     num_failures);
 
 for k = 1:length(failed_indices)
@@ -75,20 +75,20 @@ for t = 1:TIME_STEPS
     for i = 2:GRID_SIZE-1
         for j = 2:GRID_SIZE-1
 
-            laplacian = ...
-                temp_normal(i+1, j) + ...
-                temp_normal(i-1, j) + ...
-                temp_normal(i, j+1) + ...
-                temp_normal(i, j-1) - ...
+            laplacian = 
+                temp_normal(i+1, j) + 
+                temp_normal(i-1, j) + 
+                temp_normal(i, j+1) + 
+                temp_normal(i, j-1) - 
                 4 * temp_normal(i, j);
 
-            control = ...
-                heating_power * ...
+            control = 
+                heating_power * 
                 (target_temp - temp_normal(i, j));
 
-            new_temp(i, j) = ...
-                new_temp(i, j) + ...
-                diffusion * laplacian + ...
+            new_temp(i, j) = 
+                new_temp(i, j) + 
+                diffusion * laplacian + 
                 0.05 * control;
 
         end
@@ -96,7 +96,7 @@ for t = 1:TIME_STEPS
 
     temp_normal = new_temp;
 
-    avg_temp_normal(t) = ...
+    avg_temp_normal(t) = 
         mean(temp_normal(:));
 
 end
@@ -114,11 +114,11 @@ for t = 1:TIME_STEPS
     for i = 2:GRID_SIZE-1
         for j = 2:GRID_SIZE-1
 
-            laplacian = ...
-                temp_failure(i+1, j) + ...
-                temp_failure(i-1, j) + ...
-                temp_failure(i, j+1) + ...
-                temp_failure(i, j-1) - ...
+            laplacian = 
+                temp_failure(i+1, j) + 
+                temp_failure(i-1, j) + 
+                temp_failure(i, j+1) + 
+                temp_failure(i, j-1) - 
                 4 * temp_failure(i, j);
 
             % Failed node
@@ -129,10 +129,10 @@ for t = 1:TIME_STEPS
             else
 
                 % Neighbor-aware adaptive recovery
-                nearby_failures = ...
-                    (failure_map(i+1, j) == 0) || ...
-                    (failure_map(i-1, j) == 0) || ...
-                    (failure_map(i, j+1) == 0) || ...
+                nearby_failures = 
+                    (failure_map(i+1, j) == 0) || 
+                    (failure_map(i-1, j) == 0) || 
+                    (failure_map(i, j+1) == 0) || 
                     (failure_map(i, j-1) == 0);
 
                 if nearby_failures
@@ -141,16 +141,16 @@ for t = 1:TIME_STEPS
                     adaptive_gain = 1.0;
                 end
 
-                control = ...
-                    adaptive_gain * ...
-                    heating_power * ...
+                control = 
+                    adaptive_gain * 
+                    heating_power * 
                     (target_temp - temp_failure(i, j));
 
             end
 
-            new_temp(i, j) = ...
-                new_temp(i, j) + ...
-                diffusion * laplacian + ...
+            new_temp(i, j) = 
+                new_temp(i, j) + 
+                diffusion * laplacian + 
                 0.05 * control;
 
         end
@@ -158,7 +158,7 @@ for t = 1:TIME_STEPS
 
     temp_failure = new_temp;
 
-    avg_temp_failure(t) = ...
+    avg_temp_failure(t) = 
         mean(temp_failure(:));
 
 end
@@ -177,7 +177,7 @@ imagesc(temp_normal);
 colormap('hot');
 caxis([-6 1.5]);
 
-title('Normal Distribution', ...
+title('Normal Distribution', 
     'FontSize', 10);
 
 axis off;
@@ -189,7 +189,7 @@ imagesc(failure_map);
 
 colormap('gray');
 
-title('Failure Map', ...
+title('Failure Map', 
     'FontSize', 10);
 
 axis off;
@@ -202,7 +202,7 @@ imagesc(temp_failure);
 colormap('hot');
 caxis([-6 1.5]);
 
-title('Adaptive Recovery', ...
+title('Adaptive Recovery', 
     'FontSize', 10);
 
 axis off;
@@ -210,7 +210,7 @@ axis off;
 % Shared colorbar
 colorbar;
 
-saveas(gcf, ...
+saveas(gcf, 
     'fault_tolerant_thermal_maps.png');
 
 % -----------------------------------
@@ -219,11 +219,11 @@ saveas(gcf, ...
 
 figure;
 
-plot(avg_temp_normal, ...
+plot(avg_temp_normal, 
     'LineWidth', 2);
 hold on;
 
-plot(avg_temp_failure, ...
+plot(avg_temp_failure, 
     'LineWidth', 2);
 
 yline(target_temp, '--');
@@ -231,17 +231,17 @@ yline(target_temp, '--');
 xlabel('Time Step');
 ylabel('Average Temperature (°C)');
 
-title( ...
-    'Fault-Tolerant Thermal Regulation', ...
+title( 
+    'Fault-Tolerant Thermal Regulation', 
     'FontSize', 11);
 
-legend( ...
-    'Normal Operation', ...
-    'Failure + Recovery', ...
-    'Target Temperature', ...
+legend( 
+    'Normal Operation', 
+    'Failure + Recovery', 
+    'Target Temperature', 
     'FontSize', 8);
 
 grid on;
 
-saveas(gcf, ...
+saveas(gcf, 
     'fault_tolerant_response.png');

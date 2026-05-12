@@ -61,7 +61,7 @@ for step = 1:time_steps
     end
 
     dT_onoff = (
-        heating_onoff ...
+        heating_onoff 
         - heat_loss * (temperature_onoff - ambient_temperature)
     ) / thermal_capacity;
 
@@ -77,16 +77,16 @@ for step = 1:time_steps
 
     derivative = (error - previous_error) / dt;
 
-    control_signal = ...
-        Kp * error + ...
-        Ki * integral + ...
+    control_signal = 
+        Kp * error + 
+        Ki * integral + 
         Kd * derivative;
 
     % Saturation limits
     control_signal = max(0.0, min(control_signal, 5.0));
 
     dT_pid = (
-        control_signal ...
+        control_signal 
         - heat_loss * (temperature_pid - ambient_temperature)
     ) / thermal_capacity;
 
@@ -111,11 +111,11 @@ end
 
 figure;
 
-plot(time_axis, onoff_response, ...
+plot(time_axis, onoff_response, 
     'LineWidth', 2);
 hold on;
 
-plot(time_axis, pid_response, ...
+plot(time_axis, pid_response, 
     'LineWidth', 2);
 
 yline(target_temperature, '--');
@@ -125,10 +125,10 @@ ylabel('Temperature (°C)');
 
 title('Controller Comparison');
 
-legend( ...
-    'ON/OFF Control', ...
-    'PID Control', ...
-    'Target Temperature' ...
+legend( 
+    'ON/OFF Control', 
+    'PID Control', 
+    'Target Temperature' 
 );
 
 grid on;
