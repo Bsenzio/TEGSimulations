@@ -32,8 +32,8 @@ Kd_adaptive = 0.65
 # INITIAL CONDITIONS
 # ==========================================================
 
-temperature_pid = 0.0
-temperature_adaptive = 0.0
+temperature_pid = -8.0
+temperature_adaptive = -8.0
 
 integral_pid = 0.0
 integral_adaptive = 0.0
@@ -45,7 +45,7 @@ previous_error_adaptive = 0.0
 # KALMAN FILTER PARAMETERS
 # ==========================================================
 
-estimated_temperature = 0.0
+estimated_temperature = -8.0
 
 P = 1.0
 Q = 0.005
@@ -278,7 +278,7 @@ plt.yticks(
     np.arange(0, 2.21, 0.1)
 )
 
-plt.ylim(0, 2.2)
+plt.ylim(-8.20, 2.2)
 
 plt.xlabel('Time (s)')
 plt.ylabel('Temperature (°C)')
@@ -325,7 +325,7 @@ plt.yticks(
     np.arange(-0.2, 2.21, 0.1)
 )
 
-plt.ylim(-0.2, 2.2)
+plt.ylim(-8.2, 2.2)
 
 plt.xlabel('Time (s)')
 plt.ylabel('Temperature (°C)')

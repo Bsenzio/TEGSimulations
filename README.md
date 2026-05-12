@@ -327,5 +327,5 @@ under winter environmental conditions representative of Yamagata, Japan.
 
 MIT License
 
----
+
 

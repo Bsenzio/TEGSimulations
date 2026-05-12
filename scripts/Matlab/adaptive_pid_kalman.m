@@ -90,24 +90,24 @@ for step = 1:time_steps
 
     integral_pid = max(-8, min(integral_pid, 8));
 
-    derivative_pid = ...
+    derivative_pid = 
         (error_pid - previous_error_pid) / dt;
 
-    control_pid = ...
-        Kp * error_pid + ...
-        Ki * integral_pid + ...
+    control_pid = 
+        Kp * error_pid + 
+        Ki * integral_pid + 
         Kd * derivative_pid;
 
     control_pid = max(0, min(control_pid, 4.0));
 
     dT_pid = (
-        control_pid ...
-        - heat_loss * ...
-        (temperature_pid - ambient_temperature) ...
+        control_pid 
+        - heat_loss * 
+        (temperature_pid - ambient_temperature) 
         - wind_disturbance
     ) / thermal_capacity;
 
-    temperature_pid = ...
+    temperature_pid = 
         temperature_pid + dt * dT_pid;
 
     previous_error_pid = error_pid;
@@ -116,7 +116,7 @@ for step = 1:time_steps
     % SENSOR MEASUREMENT
     % ======================================================
 
-    measured_temp = ...
+    measured_temp = 
         temperature_adaptive + thermal_noise;
 
     % ======================================================
@@ -129,8 +129,8 @@ for step = 1:time_steps
 
     K = P / (P + R);
 
-    estimated_temperature = ...
-        predicted_temperature + ...
+    estimated_temperature = 
+        predicted_temperature + 
         K * (measured_temp - predicted_temperature);
 
     P = (1 - K) * P;
@@ -139,45 +139,45 @@ for step = 1:time_steps
     % ADAPTIVE PID
     % ======================================================
 
-    adaptive_gain = ...
-        1.0 + ...
-        abs(target_temperature - estimated_temperature) ...
+    adaptive_gain = 
+        1.0 + 
+        abs(target_temperature - estimated_temperature) 
         * 0.04;
 
-    Kp_current = ...
+    Kp_current = 
         Kp_adaptive * adaptive_gain;
 
     Ki_current = Ki_adaptive;
     Kd_current = Kd_adaptive;
 
-    error_adaptive = ...
+    error_adaptive = 
         target_temperature - estimated_temperature;
 
-    integral_adaptive = ...
+    integral_adaptive = 
         integral_adaptive + error_adaptive * dt;
 
-    integral_adaptive = ...
+    integral_adaptive = 
         max(-8, min(integral_adaptive, 8));
 
-    derivative_adaptive = ...
+    derivative_adaptive = 
         (error_adaptive - previous_error_adaptive) / dt;
 
-    control_adaptive = ...
-        Kp_current * error_adaptive + ...
-        Ki_current * integral_adaptive + ...
+    control_adaptive = 
+        Kp_current * error_adaptive + 
+        Ki_current * integral_adaptive + 
         Kd_current * derivative_adaptive;
 
-    control_adaptive = ...
+    control_adaptive = 
         max(0, min(control_adaptive, 4.0));
 
     dT_adaptive = (
-        control_adaptive ...
-        - heat_loss * ...
-        (temperature_adaptive - ambient_temperature) ...
+        control_adaptive 
+        - heat_loss * 
+        (temperature_adaptive - ambient_temperature) 
         - wind_disturbance
     ) / thermal_capacity;
 
-    temperature_adaptive = ...
+    temperature_adaptive = 
         temperature_adaptive + dt * dT_adaptive;
 
     previous_error_adaptive = error_adaptive;
@@ -190,12 +190,12 @@ for step = 1:time_steps
 
     pid_response(step) = temperature_pid;
 
-    adaptive_response(step) = ...
+    adaptive_response(step) = 
         temperature_adaptive;
 
     measured_signal(step) = measured_temp;
 
-    estimated_signal(step) = ...
+    estimated_signal(step) = 
         estimated_temperature;
 
 end
@@ -206,11 +206,11 @@ end
 
 figure;
 
-plot(time_axis, pid_response, ...
+plot(time_axis, pid_response, 
     'LineWidth', 2);
 hold on;
 
-plot(time_axis, adaptive_response, ...
+plot(time_axis, adaptive_response, 
     'LineWidth', 2);
 
 yline(target_temperature, '--');
@@ -225,10 +225,10 @@ ylabel('Temperature (°C)');
 
 title('Adaptive PID vs Classical PID');
 
-legend( ...
-    'Classical PID', ...
-    'Adaptive PID + Kalman', ...
-    'Target Temperature' ...
+legend( 
+    'Classical PID', 
+    'Adaptive PID + Kalman', 
+    'Target Temperature' 
 );
 
 grid on;
@@ -241,12 +241,12 @@ saveas(gcf, 'adaptive_pid_vs_pid.png');
 
 figure;
 
-plot(time_axis, measured_signal, ...
+plot(time_axis, measured_signal, 
     'DisplayName', 'Noisy Measurement');
 hold on;
 
-plot(time_axis, estimated_signal, ...
-    'LineWidth', 2, ...
+plot(time_axis, estimated_signal, 
+    'LineWidth', 2, 
     'DisplayName', 'Kalman Estimation');
 
 % Y AXIS EVERY 0.1°C
