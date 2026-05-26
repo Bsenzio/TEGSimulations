@@ -6,16 +6,16 @@ import matplotlib.pyplot as plt
 # -----------------------------------
 
 GRID_SIZE = 30
-TIME_STEPS = 150
+TIME_STEPS = 140
 
-ambient_temp = -6.0
-target_temp = 1.0
+ambient_temp = -1.0
+target_temp = 2.0
 
 diffusion = 0.18
-heating_power = 0.30
+heating_power = 0.90
 
 # Failure parameters
-failure_ratio = 0.20
+failure_ratio = 0.10
 
 # -----------------------------------
 # INITIAL GRID
@@ -81,7 +81,7 @@ for t in range(TIME_STEPS):
 
             new_temp[i, j] += (
                 diffusion * laplacian
-                + 0.05 * control
+                + 0.15 * control
             )
 
     temp_normal = new_temp
@@ -223,16 +223,19 @@ plt.savefig(
 # -----------------------------------
 # STABILITY RESPONSE
 # -----------------------------------
+time_axis = np.arange(TIME_STEPS)
 
 plt.figure(figsize=(8, 4))
 
 plt.plot(
+    time_axis,
     avg_temp_normal,
     label='Normal Operation',
     linewidth=2
 )
 
 plt.plot(
+    time_axis,
     avg_temp_failure,
     label='Failure + Recovery',
     linewidth=2
