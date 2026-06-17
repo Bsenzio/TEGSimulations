@@ -59,17 +59,20 @@
 <script src="Build/WebGL.loader.js"></script>
 
 <script>
+const canvas = document.querySelector("#unity-canvas");
 
-    const canvas = document.querySelector("#unity-canvas");
-
-    createUnityInstance(canvas, {
-        dataUrl: "Build/Build.data",
-        frameworkUrl: "Build/Build.framework.js",
-        codeUrl: "Build/Build.wasm"
-    });
-
+createUnityInstance(canvas, {
+    dataUrl: "Build/Build.data",
+    frameworkUrl: "Build/Build.framework.js",
+    codeUrl: "Build/Build.wasm"
+})
+.then((unityInstance) => {
+    console.log("Unity cargó correctamente");
+})
+.catch((message) => {
+    console.error("Error Unity:", message);
+});
 </script>
-
 
 </body>
 </html>
