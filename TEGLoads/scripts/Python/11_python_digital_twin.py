@@ -11,7 +11,7 @@ GRID_Y = 20
 
 dt = 0.1
 
-ambient_temperature = -8.0
+ambient_temperature = -6.0
 target_temperature = 2.0
 
 thermal_diffusion = 0.12
