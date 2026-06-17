@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALIFE26 BMI/AL Tutorial</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap"
+rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<img
+    src="assets/bg-images/bci-left-wall.png"
+    class="left-background-art"
+    alt=""
+>
+
+<nav class="navbar">
+		<div class="retro-player">
+
+		<div class="player-display">
+
+			<div class="track-scroll">
+
+				<span class="track-text" id="trackText1"></span>
+				<span class="track-text" id="trackText2"></span>
+				<span class="track-text" id="trackText3"></span>
+				<span class="track-text" id="trackText4"></span>
+
+			</div>
+
+		</div>
+
+			<div class="player-controls">
+
+				<button id="prevTrack" class="player-btn">
+					⏮
+				</button>
+
+				<button id="playTrack" class="player-btn">
+					▶
+				</button>
+
+				<button id="stopTrack" class="player-btn">
+					■
+				</button>
+
+				<button id="nextTrack" class="player-btn">
+					⏭
+				</button>
+				
+				<button id="volDown" class="player-btn">
+					-
+				</button>
+
+				<button id="volUp" class="player-btn">
+					+
+				</button>
+				
+				<div id="volumeDisplay" class="volume-display">
+					VOL 5
+				</div>			
+			</div>
+
+		</div>
+
+		<div class="nav-links">
+			<a href="#tutorial" class="nav-btn">Tutorial</a>
+			<a href="#speakers" class="nav-btn">Organizers</a>
+			<a href="#about" class="nav-btn">About</a>
+		</div>
+
+		<div class="nav-status">
+			<span class="blink">●</span>
+			READY
+		</div>
+
+</nav>
+
+<header class="hero" id="home">
+
+    <h1>ALIFE26 BMI/AL Tutorial</h1>
+
+    <h2>
+        From Neural Signals to AL Interactive Systems
+    </h2>
+
+    <div class="hero-images">
+
+        <img
+            src="assets/bg-images/bciretro1.png"
+            class="floating-bci"
+            alt="BCI Retro"
+        >
+
+        <img
+            src="assets/bg-images/bciretro2.png"
+            class="floating-bci"
+            alt="Image 2"
+        >
+
+        <img
+            src="assets/bg-images/bciretro3.png"
+            class="floating-bci"
+            alt="Image 3"
+        >
+
+        <img
+            src="assets/bg-images/bciretro4.png"
+            class="floating-bci"
+            alt="Image 3"
+        >
+		
+        <img
+            src="assets/bg-images/bciretro5.png"
+            class="floating-bci"
+            alt="Image 3"
+        >
+    </div>
+
+</header>
+
+
+<img
+    src="assets/bg-images/bci-right-wall.png"
+    class="right-background-art"
+    alt=""
+>
+
+<section id="tutorial">
+
+    <h2 class="section-title">
+        Tutorial Interactive Demo
+    </h2>
+
+    <div class="arcade-wrapper">
+
+        <div class="arcade-cabinet">
+
+            <div class="arcade-marquee">
+
+                INTUITIVE RETRO ARCADE GAMING EXPERIENCE
+
+            </div>
+
+            <div class="arcade-screen-frame">
+
+                <div id="game"></div>
+
+            </div>
+
+            <div class="arcade-controls">
+
+                <div class="game-cartridge-selector">
+
+                    <img
+                        src="assets/images/cartridges/alife2026prep.png"
+                        class="game-cartridge"
+                        data-rom="assets/roms/alifeprep.nes">
+
+                    <img
+                        src="assets/images/cartridges/wamv.png"
+                        class="game-cartridge"
+                        data-rom="assets/roms/wamv.nes">
+
+                    <img
+                        src="assets/images/cartridges/okadv.png"
+                        class="game-cartridge"
+                        data-rom="assets/roms/okadv.nes">
+
+                </div>
+
+					<span class="arcade-message">
+						SELECT A GAME B4 THE TUTORIAL
+					</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="skill-carousel-section">
+
+    <h2 class="section-title">
+
+        Tutorial Highlights
+
+    </h2>
+
+    <div class="carousel-wrapper">
+
+        <button id="prevSkill" class="carousel-btn">
+
+            <i class="fas fa-chevron-left"></i>
+
+        </button>
+
+        <div class="carousel-3d">
+
+            <div class="skill-slide">
+                <img src="assets/bg-images/slide1.jpg">
+            </div>
+
+            <div class="skill-slide">
+                <img src="assets/bg-images/slide2.jpg">
+            </div>
+
+            <div class="skill-slide">
+                <img src="assets/bg-images/slide3.jpg">
+            </div>
+
+            <div class="skill-slide">
+                <img src="assets/bg-images/slide4.jpg">
+            </div>
+
+            <div class="skill-slide">
+                <img src="assets/bg-images/slide5.jpg">
+            </div>
+
+            <div class="skill-slide">
+                <img src="assets/bg-images/slide6.jpg">
+            </div>
+
+        </div>
+
+        <button id="nextSkill" class="carousel-btn">
+
+            <i class="fas fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+<section id="speakers">
+
+    <h2 class="section-title">
+        Tutorial Organizers
+    </h2>
+	
+	<div class="speakers-grid">
+
+		<a href="https://bsenzio.github.io/portfolio" target="_blank" class="speaker-link">
+			<div class="speaker-card">
+				<img src="assets/images/speaker1.jpg">
+				<h3>Bruno Senzio-Savino</h3>
+				<p>Yamagata University</p>
+				<p>Invited Researcher</p>
+			</div>
+		</a>
+
+		<a href="https://www.crosslabs.org/" target="_blank" class="speaker-link">
+			<div class="speaker-card">
+				<img src="assets/images/speaker2.jpg">
+				<h3>Mahdi Khosravy</h3>
+				<p>Cross Labs</p>
+			</div>
+		</a>
+
+		<a href="https://www.crosslabs.org/" target="_blank" class="speaker-link">
+			<div class="speaker-card">
+				<img src="assets/images/speaker3.jpg">
+				<h3>Alyssa Adams</h3>
+				<p>Cross Labs</p>
+			</div>
+		</a>
+
+		<a href="https://www.crosslabs.org/" target="_blank" class="speaker-link">
+			<div class="speaker-card">
+				<img src="assets/images/speaker4.jpg">
+				<h3>Olaf Witkowski</h3>
+				<p>Cross Labs</p>
+			</div>
+		</a>
+
+	</div>
+
+</section>
+
+<section id="about">
+
+    <h2 class="section-title">
+
+        About The Tutorial
+
+    </h2>
+
+    <div class="about-box">
+
+	<div class="about-grid">
+
+		<div class="about-card">
+
+			<img
+				src="assets/images/about/eeg.jpg"
+				alt="EEG and Neural Signals"
+				class="about-image"
+			>
+
+			<h3 class="about-subtitle">
+				What You Will Learn
+			</h3>
+
+			<ul class="about-list">
+
+				<li>EEG acquisition fundamentals</li>
+
+				<li>Neural signal processing</li>
+
+				<li>Feature extraction methods</li>
+
+				<li>Machine learning pipelines</li>
+
+				<li>Real-time BCI interaction</li>
+
+			</ul>
+
+		</div>
+
+		<div class="about-card">
+
+			<img
+				src="assets/images/about/alife.jpg"
+				alt="Artificial Life"
+				class="about-image"
+			>
+
+			<h3 class="about-subtitle">
+				Topics Covered
+			</h3>
+
+			<ul class="about-list">
+
+				<li>Brain–Computer Interfaces</li>
+
+				<li>Artificial Life Systems</li>
+
+				<li>Adaptive Environments</li>
+
+				<li>Swarm Intelligence</li>
+
+				<li>Human–AI Collaboration</li>
+
+			</ul>
+
+		</div>
+
+		<div class="about-card">
+
+			<img
+				src="assets/images/about/workshop.jpg"
+				alt="Hands On Workshop"
+				class="about-image"
+			>
+
+			<h3 class="about-subtitle">
+				Hands-On Experience
+			</h3>
+
+			<ul class="about-list">
+
+				<li>Live demonstrations</li>
+
+				<li>EEG hardware experiments</li>
+
+				<li>Interactive BCI systems</li>
+
+				<li>Open-source software tools</li>
+
+				<li>Practical prototyping sessions</li>
+
+			</ul>
+
+		</div>
+
+	</div>
+
+    </div>
+
+</section>
+
+<footer class="retro-footer">
+
+    <!-- Imagen izquierda -->
+    <img
+        src="assets/images/logo_footer.png"
+        class="footer-side-image footer-left"
+        alt="Left Character"
+    >
+
+    <!-- Imagen derecha -->
+    <img
+        src="assets/images/logo_header.png"
+        class="footer-side-image footer-right"
+        alt="Right Character"
+    >
+
+    <div class="footer-line"></div>
+
+    <h3 class="footer-title">
+        ALIFE26 BMI/AL TUTORIAL
+    </h3>
+
+    <p class="footer-subtitle">
+        Retro Games • Real Brains • Artificial Life
+    </p>
+
+    <div class="footer-icons">
+        <i class="fas fa-brain"></i>
+        <i class="fas fa-gamepad"></i>
+        <i class="fas fa-microchip"></i>
+    </div>
+
+    <p class="footer-copyright">
+        © 2026 • Artificial Life Conference
+    </p>
+
+    <p class="footer-credit">
+        Developed with EEG, ALife and Retro Gaming Spirit
+    </p>
+
+</footer>
+
+<audio id="bgm"></audio>
+
+<audio id="sfxClick" preload="auto">
+    <source
+        src="assets/audio/sfx/sfxclick.mp3"
+        type="audio/mpeg">
+</audio>
+
+<audio id="sfxHover" preload="auto">
+    <source
+        src="assets/audio/sfx/sfxhover.mp3"
+        type="audio/mpeg">
+</audio>
+
+
+<script>
+const bgm =
+    document.getElementById("bgm");
+
+const trackScroll =
+    document.querySelector(".track-scroll");
+
+const playBtn =
+    document.getElementById("playTrack");
+
+const tracks = [
+
+    {
+        name:"BCI Retro Theme",
+        file:"assets/audio/bgm/track01.mp3"
+    },
+
+    {
+        name:"Neural Dreams",
+        file:"assets/audio/bgm/track02.mp3"
+    },
+
+    {
+        name:"Artificial Life",
+        file:"assets/audio/bgm/track03.mp3"
+    },
+
+    {
+        name:"B-wave Runner",
+        file:"assets/audio/bgm/track04.mp3"
+    },
+
+    {
+        name:"Digital Ecology",
+        file:"assets/audio/bgm/track05.mp3"
+    }
+
+];
+
+let currentTrack = 0;
+
+bgm.volume = 0.05;
+
+function loadTrack(index){
+
+    currentTrack = index;
+
+    bgm.src = tracks[currentTrack].file;
+
+    const title =
+        " ★ " +
+        tracks[currentTrack].name +
+        " ★ ";
+
+    document.getElementById("trackText1").textContent = title;
+    document.getElementById("trackText2").textContent = title;
+    document.getElementById("trackText3").textContent = title;
+    document.getElementById("trackText4").textContent = title;
+}
+
+loadTrack(0);
+
+bgm.addEventListener("play", () => {
+
+    playBtn.textContent = "❚❚";
+
+    trackScroll.classList.add(
+        "playing"
+    );
+
+});
+
+bgm.addEventListener("pause", () => {
+
+    playBtn.textContent = "▶";
+
+    trackScroll.classList.remove(
+        "playing"
+    );
+
+});
+
+playBtn.addEventListener("click", () => {
+
+    if (bgm.paused){
+
+        bgm.play();
+
+    }else{
+
+        bgm.pause();
+
+    }
+
+});
+
+document
+.getElementById("stopTrack")
+.addEventListener("click", () => {
+
+    bgm.pause();
+
+    bgm.currentTime = 0;
+
+});
+
+document
+.getElementById("nextTrack")
+.addEventListener("click", () => {
+
+    currentTrack =
+        (currentTrack + 1)
+        % tracks.length;
+
+    loadTrack(currentTrack);
+
+    bgm.play();
+
+});
+
+document
+.getElementById("prevTrack")
+.addEventListener("click", () => {
+
+    currentTrack =
+        (currentTrack - 1 + tracks.length)
+        % tracks.length;
+
+    loadTrack(currentTrack);
+
+    bgm.play();
+
+});
+
+document
+.getElementById("volUp")
+.addEventListener("click", () => {
+
+    if(volumeLevel < 10){
+
+        volumeLevel++;
+
+        bgm.volume =
+            volumeLevel / 10;
+
+        updateVolumeDisplay();
+    }
+
+});
+
+document
+.getElementById("volDown")
+.addEventListener("click", () => {
+
+    if(volumeLevel > 0){
+
+        volumeLevel--;
+
+        bgm.volume =
+            volumeLevel / 10;
+
+        updateVolumeDisplay();
+    }
+
+});
+
+let volumeLevel = 5;
+
+const volumeDisplay =
+    document.getElementById("volumeDisplay");
+
+function updateVolumeDisplay(){
+
+    volumeDisplay.textContent =
+        "VOL " + volumeLevel;
+}
+
+
+
+bgm.addEventListener("ended", () => {
+
+    currentTrack =
+        (currentTrack + 1)
+        % tracks.length;
+
+    loadTrack(currentTrack);
+
+    bgm.play();
+
+});
+</script>
+
+<script>
+
+const sfxClick =
+    document.getElementById("sfxClick");
+
+const sfxHover =
+    document.getElementById("sfxHover");
+
+sfxClick.volume = 0.35;
+sfxHover.volume = 0.15;
+
+function playClick(){
+
+    sfxClick.currentTime = 0;
+    sfxClick.play();
+}
+
+function playHover(){
+
+    sfxHover.currentTime = 0;
+    sfxHover.play();
+}
+
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* Flechas del carrusel */
+
+    document
+        .querySelectorAll(".carousel-btn")
+        .forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                sfxClick.currentTime = 0;
+                sfxClick.play();
+
+            });
+
+        });
+
+    /* Speakers */
+
+    document
+        .querySelectorAll(".speaker-card")
+        .forEach(card => {
+
+            card.addEventListener("mouseenter", () => {
+
+                sfxHover.currentTime = 0;
+                sfxHover.play();
+
+            });
+
+        });
+
+    /* Cartuchos */
+
+    document
+        .querySelectorAll(".game-cartridge")
+        .forEach(cart => {
+
+            cart.addEventListener("mouseenter", () => {
+
+                sfxHover.currentTime = 0;
+                sfxHover.play();
+
+            });
+
+            cart.addEventListener("click", () => {
+
+                sfxClick.currentTime = 0;
+                sfxClick.play();
+
+            });
+
+        });
+
+    /* Botones del menú */
+
+    document
+        .querySelectorAll(".nav-btn")
+        .forEach(btn => {
+
+            btn.addEventListener("mouseenter", () => {
+
+                sfxHover.currentTime = 0;
+                sfxHover.play();
+
+            });
+
+            btn.addEventListener("click", () => {
+
+                sfxClick.currentTime = 0;
+                sfxClick.play();
+
+            });
+
+        });
+
+});
+
+</script>
+<script>
+
+const params =
+    new URLSearchParams(window.location.search);
+
+window.EJS_player = "#game";
+window.EJS_core = "nes";
+window.EJS_pathtodata =
+    "https://cdn.emulatorjs.org/stable/data/";
+
+window.EJS_startOnLoaded = true;
+
+window.EJS_gameUrl =
+    params.get("rom") ||
+    "assets/roms/alifeprep.nes";
+
+window.EJS_onGameStart = function ()
+{
+    // Espera un poco a que el audio esté inicializado
+    setTimeout(() =>
+    {
+        if (window.EJS_emulator)
+        {
+            // 0.0 = silencio
+            // 1.0 = volumen normal
+            window.EJS_emulator.setVolume(0.005); // 5%
+        }
+    }, 500);
+};
+
+document.addEventListener("DOMContentLoaded", () =>
+{
+    document
+        .querySelectorAll(".game-cartridge")
+        .forEach(cartridge =>
+        {
+            cartridge.addEventListener("click", () =>
+            {
+                const rom =
+                    cartridge.dataset.rom;
+
+                window.location.href =
+                    "?rom=" +
+                    encodeURIComponent(rom);
+            });
+        });
+
+    document
+        .querySelectorAll(".game-cartridge")
+        .forEach(cartridge =>
+        {
+            if (
+                cartridge.dataset.rom ===
+                window.EJS_gameUrl
+            )
+            {
+                cartridge.classList.add(
+                    "selected-cartridge"
+                );
+            }
+        });
+});
+
+</script>
+
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
+
+<script src="js/tech-background.js"></script>
+<script src="js/home.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
