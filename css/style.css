@@ -98,24 +98,20 @@ z-index:-1;
     justify-content:center;
     align-items:center;
     width:100%;
-    margin-top:20px;
+    margin-top:30px;
 }
 
 #unity-container{
-    width:960px !important;
-    height:600px !important;
-    position:relative;
-    margin:0 auto;
+    width: 960px;
+    height: 600px;
+    margin: 40px auto;
+    position: relative;
 }
 
 #unity-canvas{
-    width:960px !important;
-    height:600px !important;
-    display:block;
-}
-
-#unity-footer{
-    width:960px;
+    width: 960px;
+    height: 600px;
+    display: block;
 }
 .header p {
 
