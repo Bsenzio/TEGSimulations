@@ -56,7 +56,177 @@
 		</div>
 	</section>
 </main>	
-	
+
+<!-- ACTION BUTTONS -->
+
+<section class="research-actions">
+
+    <a href="results/index.html" class="action-btn">
+        View Simulation Results
+    </a>
+
+    <a href="python/run_simulations.html" class="action-btn">
+        Run Python Simulations
+    </a>
+
+</section>
+
+<section class="research-summary">
+    <div class="summary-block">
+
+<h2>Research Overview</h2>
+
+<p>
+    This work presents a distributed thermoelectric regulation framework
+    designed for adaptive rooftop snow mitigation under cold climate
+    conditions representative of northern Japan. The proposed system
+    investigates how independently controlled thermoelectric nodes can
+    cooperatively regulate rooftop temperature through localized thermal
+    actuation, adaptive feedback control and spatial thermal diffusion.
+</p>
+
+<p>
+    Unlike conventional snow mitigation approaches based on resistive
+    heating or manual removal, the proposed architecture seeks to provide
+    localized thermal stabilization while minimizing unnecessary energy
+    expenditure. Each thermoelectric node operates autonomously using
+    embedded sensing, thermal estimation and adaptive control strategies
+    while simultaneously interacting with neighboring nodes through passive
+    thermal diffusion.
+</p>
+
+<h3>Distributed Thermoelectric Architecture</h3>
+
+<p>
+    The rooftop surface is modeled as a two-dimensional thermoelectric grid
+    composed of independently regulated thermal nodes. Every node includes
+    a thermoelectric module, local temperature sensing, electrical
+    monitoring and adaptive thermal regulation capabilities.
+</p>
+
+<p>
+    Thermal interaction between adjacent nodes enables distributed thermal
+    balancing, allowing the system to compensate for localized cooling,
+    environmental disturbances and partial node failures.
+</p>
+
+<h3>Thermoelectric Modeling</h3>
+
+<p>
+    Thermoelectric performance is characterized using the classical figure
+    of merit:
+</p>
+
+<div class="equation">
+    ZT = (S²σT) / k
+</div>
+
+<p>
+    where S denotes the Seebeck coefficient, σ represents electrical
+    conductivity, T is the absolute temperature and k corresponds to
+    thermal conductivity.
+</p>
+
+<p>
+    Voltage generation across each thermoelectric node follows:
+</p>
+
+<div class="equation">
+    Vi = α(Th,i − Tc,i)
+</div>
+
+<p>
+    where α is the Seebeck coefficient and Th,Tc represent the hot-side
+    and cold-side temperatures respectively.
+</p>
+
+<h3>Thermal Dynamics</h3>
+
+<p>
+    Local node dynamics are governed by transient thermal energy balance:
+</p>
+
+<div class="equation">
+    Ci(dTi/dt) = Qlocal − Qloss + Qneighbor
+</div>
+
+<p>
+    This formulation captures localized heating effects, environmental
+    thermal losses and neighboring thermal contributions.
+</p>
+
+<p>
+    Thermal propagation throughout the rooftop is modeled through discrete
+    thermal diffusion:
+</p>
+
+<div class="equation">
+    Tij(t+1) = Tij(t) + Δt(Qlocal − Qloss + k∇²T)
+</div>
+
+<p>
+    The resulting model enables simulation of thermal spreading,
+    distributed stabilization and adaptive temperature balancing across
+    the entire rooftop structure.
+</p>
+
+<h3>Adaptive Thermal Control</h3>
+
+<p>
+    Thermal regulation is achieved using both conventional PID and
+    adaptive PID control strategies. The adaptive controller dynamically
+    adjusts its regulation gains according to the estimated thermal error,
+    improving convergence speed while reducing oscillatory behavior and
+    thermal overshoot.
+</p>
+
+<div class="equation">
+    u(t) = Kpe(t) + Ki∫e(t)dt + Kd(de/dt)
+</div>
+
+<p>
+    To improve robustness under noisy sensing conditions, a Kalman-based
+    thermal estimation layer is incorporated into the regulation loop,
+    providing smoother state estimation and enhanced control stability.
+</p>
+
+<h3>Simulation Framework</h3>
+
+<p>
+    The simulation environment incorporates realistic environmental
+    perturbations including thermal losses, snow accumulation effects,
+    sensor uncertainty, distributed node interaction and fault scenarios.
+    These conditions enable evaluation of controller performance under
+    representative winter operating environments.
+</p>
+
+<h3>Key Findings</h3>
+
+<p>
+    Simulation results indicate that adaptive PID regulation combined with
+    Kalman thermal estimation achieves improved stabilization performance
+    compared with conventional PID and ON/OFF thermal control approaches.
+    The distributed architecture demonstrates reduced overshoot, improved
+    convergence characteristics, increased robustness to measurement noise
+    and successful operation under partial node failure conditions.
+</p>
+
+<h3>Future Directions</h3>
+
+<p>
+    Ongoing research includes large-scale thermoelectric networks,
+    digital-twin integration, AI-assisted predictive thermal regulation,
+    distributed edge intelligence and future validation through physical
+    rooftop prototype deployment.
+</p>
+
+
+</section>
+
+
+    </div>
+
+</section>
 	<script src="js/cvect-background.js"></script>
     <script>
       var canvas1 = document.querySelector("#unity-canvas");
