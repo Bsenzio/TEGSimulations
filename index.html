@@ -1,63 +1,28 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TEG Virtual Twin Implementation</title>
-<link rel="icon" type="image/png" href="assets/r_icon.png">
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<canvas id="cvect-background"></canvas>
-
-<header class="header">
-
-    <div class="header-row">
-
-        <img src="assets/logo.png" class="logo">
-
-        <div class="title-block">
-
-            <h1>TEG Virtual Twin Implementation</h1>
-
-            <p>
-            Digital Twin Platform for Thermoelectric Energy Harvesting
-            under Snow and Extreme Climate Conditions
-            </p>
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity Web Player | TEG-VT</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
         </div>
-
-        <img src="assets/stebcsh.png" class="logo">
-
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-logo-title-footer"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">TEG-VT</div>
+      </div>
     </div>
-
-</header>
-
-<main>
-
-    <section class="simulation-container">
-
-        <div id="unity-container">
-
-            <!-- Unity WebGL Canvas -->
-            <canvas id="unity-canvas"></canvas>
-
-        </div>
-
-    </section>
-
-</main>
-
-<script src="js/cvect-background.js"></script>
-
-<!-- Unity Loader -->
-<script src="Build/Build.loader.js"></script>
-
     <script>
       var canvas = document.querySelector("#unity-canvas");
 
@@ -164,6 +129,5 @@
       document.body.appendChild(script);
 
     </script>
-
-</body>
+  </body>
 </html>
