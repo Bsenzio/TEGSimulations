@@ -57,9 +57,9 @@
 	</section>
 </main>	
 	
-	
+	<script src="js/cvect-background.js"></script>
     <script>
-      var canvas = document.querySelector("#unity-canvas");
+      var canvas1 = document.querySelector("#unity-canvas");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -130,7 +130,7 @@
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
+        canvas1.className = "unity-mobile";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
@@ -139,8 +139,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-		canvas.style.width = "960px";
-		canvas.style.height = "600px";
+		canvas1.style.width = "960px";
+		canvas1.style.height = "600px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
@@ -148,7 +148,7 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
+        createUnityInstance(canvas1, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
@@ -164,8 +164,6 @@
       document.body.appendChild(script);
 
     </script>
-
-<script src="js/cvect-background.js"></script>
 
 </body>
 </html>
