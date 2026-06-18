@@ -1,12 +1,12 @@
-const canvas1 = document.getElementById("cvect-background");
-const ctx = canvas1.getContext("2d");
+const canvas = document.getElementById("cvect-background");
+const ctx = canvas.getContext("2d");
 
 let width;
 let height;
 
 function resize() {
-    width = canvas1.width = window.innerWidth;
-    height = canvas1.height = window.innerHeight;
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
 }
 
 window.addEventListener("resize", resize);
